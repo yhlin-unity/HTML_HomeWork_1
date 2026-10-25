@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LimbusCompany-浮士德人格</title>
+
+    <style>
+        /* 網頁基本設定 */
+        body {
+            margin: 0;
+            background-color: #eeeeee;
+        }
+
+        /* 整張相簿背景 */
+        .album {
+            width: 1024px;
+            height: 1516px;
+            margin: 0 auto;
+            background-image: url("images/index.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+
+        /* 六張照片排列位置 */
+        .photo-grid {
+            position: absolute;
+            top: 365px;
+            left: 265px;
+
+            display: grid;
+            grid-template-columns: 300px 300px;
+            column-gap: 35px;
+            row-gap: 60px;
+        }
+
+        /* 每張照片的黃色背景 */
+        .photo {
+            width: 350px;
+            height: 280px;
+            background-image: url("images/photobg.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* 六張小照片 */
+        .photo img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* 照片下方文字 */
+.photo p {
+    margin: 5px 0 0;
+    font-family: "SimSun", "PMingLiU", serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #5e5145;
+}
+        .photo:nth-child(2),
+.photo:nth-child(4),
+.photo:nth-child(6) {
+    transform: translateX(-50px);
+}
+    </style>
+</head>
+
+<body>
+    <!-- 自動插入的返回首頁按鈕 -->
+    <a href="../index.html" class="auto-back-to-home">🏠 返回相簿觀摩首頁</a>
+    <style>
+        .auto-back-to-home {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff !important;
+            border: 1px solid #eee2c5 !important;
+            border-radius: 30px !important;
+            color: #5d5238 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-family: sans-serif !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            transition: all 0.2s ease !important;
+            position: relative;
+            z-index: 99999;
+        }
+        .auto-back-to-home:hover {
+            background-color: #fff9e6 !important;
+            border-color: #d4bc85 !important;
+            color: #b38628 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+
+
+    <!-- 整張相簿背景 -->
+    <div class="album">
+
+        <!-- 六張照片 -->
+        <div class="photo-grid">
+
+            <!-- 第一張 -->
+            <div class="photo">
+                <img src="images/1.png" alt="LCE E.G.O::灼熱炎火之星">
+                <p>[LCE E.G.O::灼熱炎火之星]</p>
+            </div>
+
+            <!-- 第二張 -->
+            <div class="photo">
+                <img src="images/2.PNG" alt="[N公司] 執柄者">
+                <p>[N公司] 執柄者</p>
+            </div>
+
+            <!-- 第三張 -->
+            <div class="photo">
+                <img src="images/3.PNG" alt="[多裂紋事務所代表]">
+                <p>[多裂紋事務所代表]</p>
+            </div>
+
+            <!-- 第四張 -->
+            <div class="photo">
+                <img src="images/4.png" alt="[南部七協 4科]">
+                <p>[南部七協 4科]</p>
+            </div>
+
+            <!-- 第五張 -->
+            <div class="photo">
+                <img src="images/5.PNG" alt="[黎明事務所收尾人]">
+                <p>[黎明事務所收尾人]</p>
+            </div>
+
+            <!-- 第六張 -->
+            <div class="photo">
+                <img src="images/6.png" alt="[黑獸-卯魁首]">
+                <p>[黑獸-卯魁首]</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

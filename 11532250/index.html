@@ -1,0 +1,218 @@
+<html>
+<head>
+   
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>旅遊相簿</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Microsoft JhengHei", sans-serif;
+            background-color: #eaf4fa;
+        }
+
+        /* 網頁背景圖片 */
+        .background {
+            min-height: 100vh;
+            padding: 30px 15px;
+            background-image: url("images/background.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* 網頁標題 */
+        .header {
+            text-align: center;
+            padding: 10px;
+            color: #174b79;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 17px;
+        }
+
+        /* 相簿外框 */
+        .album {
+            max-width: 1050px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: rgba(255, 252, 241, 0.95);
+            border-radius: 12px;
+        }
+
+        /* 照片排列 */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        /* 每張照片 */
+        .photo {
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .photo h2 {
+            font-size: 18px;
+            color: #245477;
+            margin: 12px 0 6px;
+        }
+
+        .photo p {
+            color: #777777;
+            font-size: 14px;
+            margin: 5px 0 10px;
+        }
+
+        /* 滑鼠移到照片時的效果 */
+        .photo:hover {
+            transform: translateY(-4px);
+            transition: 0.3s;
+        }
+
+        /* 網頁底部 */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #174b79;
+        }
+
+        /* 平板版面 */
+        @media (max-width: 750px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* 手機版面 */
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .album {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 自動插入的返回首頁按鈕 -->
+    <a href="../index.html" class="auto-back-to-home">🏠 返回相簿觀摩首頁</a>
+    <style>
+        .auto-back-to-home {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff !important;
+            border: 1px solid #eee2c5 !important;
+            border-radius: 30px !important;
+            color: #5d5238 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-family: sans-serif !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            transition: all 0.2s ease !important;
+            position: relative;
+            z-index: 99999;
+        }
+        .auto-back-to-home:hover {
+            background-color: #fff9e6 !important;
+            border-color: #d4bc85 !important;
+            color: #b38628 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+
+
+<div class="background">
+
+    <!-- 網頁標題 -->
+    <div class="header">
+        <h1>📷 旅遊相簿</h1>
+        <p>用鏡頭記錄每一段美好的旅程</p>
+    </div>
+
+    <!-- 六張旅遊照片 -->
+    <div class="album">
+        <div class="gallery">
+
+            <div class="photo">
+                <img src="images/1.jpg" alt="台北101">
+                <h2>台北 101</h2>
+                <p>璀璨城市夜景</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/2.jpg" alt="日月潭">
+                <h2>日月潭</h2>
+                <p>湖光山色的美景</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/3.jpg" alt="九份">
+                <h2>九份老街</h2>
+                <p>山城懷舊風情</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/4.jpg" alt="陽明山國家公園">
+                <h2>陽明山國家公園</h2>
+                <p>漫步綠色草原</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/5.jpg" alt="故宮博物院">
+                <h2>故宮博物院</h2>
+                <p>欣賞文化藝術</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/6.jpg" alt="中正紀念堂">
+                <h2>中正紀念堂</h2>
+                <p>感受歷史建築之美</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 網頁底部 -->
+    <div class="footer">
+        <p>✈ 我的旅行紀錄・Travel & Explore</p>
+    </div>
+
+</div>
+
+</body>
+</html>

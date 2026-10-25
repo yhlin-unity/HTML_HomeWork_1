@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME ZONE 電玩機台</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, "Microsoft JhengHei", sans-serif;
+            color: white;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 20%, #34206a 0%, transparent 35%),
+                radial-gradient(circle at 85% 75%, #063f65 0%, transparent 40%),
+                linear-gradient(135deg, #070b1c, #111a38, #080d20);
+            background-attachment: fixed;
+        }
+
+        /* 電競網格背景 */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(#00eaff12 1px, transparent 1px),
+                linear-gradient(90deg, #00eaff12 1px, transparent 1px);
+            background-size: 45px 45px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* 頁面主容器 */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* 頂部標題 */
+        header {
+            text-align: center;
+            padding: 65px 20px;
+            border-radius: 20px;
+            background: linear-gradient(120deg, #121c48, #39216d, #102a53);
+            border: 2px solid #00eaff;
+            box-shadow: 0 0 35px #00eaff40;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: clamp(40px, 7vw, 75px);
+            margin: 0;
+            letter-spacing: 5px;
+            color: #ffffff;
+            text-shadow:
+                0 0 10px #00eaff,
+                0 0 30px #0077ff;
+        }
+
+        header p {
+            font-size: 19px;
+            color: #a5f3fc;
+        }
+
+        .game-icons {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        /* 導覽列 */
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 25px 0;
+            padding: 18px;
+            background: #101b36dd;
+            border-radius: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00eaff;
+            text-shadow: 0 0 12px #00eaff;
+        }
+
+        /* 區塊標題 */
+        .section-title {
+            text-align: center;
+            margin: 45px 0 30px;
+            font-size: 30px;
+            color: #ffffff;
+            text-shadow: 0 0 15px #00eaff;
+        }
+
+        /* 商品排列 */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        /* 商品卡片 */
+        .product {
+            text-align: center;
+            background: linear-gradient(145deg, #172342, #10182f);
+            border: 2px solid #284b73;
+            border-radius: 18px;
+            padding: 30px 20px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+            border-color: #00eaff;
+            box-shadow: 0 0 25px #00eaff70;
+        }
+
+        /* 商品圖片 */
+        .product img {
+            display: block;
+            width: 100%;
+            max-width: 280px;
+            height: 200px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+        }
+
+        .product h2 {
+            font-size: 23px;
+            margin: 12px 0;
+        }
+
+        .product p {
+            color: #b7c9e2;
+            font-size: 15px;
+        }
+
+        /* 商品按鈕 */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #007bff, #00d5ff);
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            box-shadow: 0 0 20px #a855f7;
+        }
+
+        /* 底部 */
+        footer {
+            text-align: center;
+            margin-top: 55px;
+            padding: 25px;
+            background: #080e20dd;
+            border-top: 2px solid #00eaff;
+            color: #9caec9;
+        }
+
+        /* 浮動遊戲裝飾 */
+        .decoration {
+            position: fixed;
+            font-size: 45px;
+            opacity: 0.16;
+            z-index: -1;
+            animation: floating 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .d1 { top: 18%; left: 3%; }
+        .d2 { top: 55%; right: 3%; animation-delay: 1s; }
+        .d3 { bottom: 10%; left: 5%; animation-delay: 2s; }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+
+        /* 手機版 */
+        @media (max-width: 650px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 45px 15px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .product {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 自動插入的返回首頁按鈕 -->
+    <a href="../index.html" class="auto-back-to-home">🏠 返回相簿觀摩首頁</a>
+    <style>
+        .auto-back-to-home {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff !important;
+            border: 1px solid #eee2c5 !important;
+            border-radius: 30px !important;
+            color: #5d5238 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-family: sans-serif !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            transition: all 0.2s ease !important;
+            position: relative;
+            z-index: 99999;
+        }
+        .auto-back-to-home:hover {
+            background-color: #fff9e6 !important;
+            border-color: #d4bc85 !important;
+            color: #b38628 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+
+
+    <!-- 背景電玩元素 -->
+    <div class="decoration d1">🎮</div>
+    <div class="decoration d2">👾</div>
+    <div class="decoration d3">🕹️</div>
+
+    <div class="container">
+
+        <!-- 網頁標題 -->
+        <header id="home">
+            <div class="game-icons">🎮 👾 🕹️</div>
+            <h1>GAME ZONE</h1>
+            <p>LEVEL UP YOUR GAMING LIFE</p>
+            <p>歡迎來到電競遊戲世界</p>
+        </header>
+
+        <!-- 導覽列 -->
+        <nav>
+            <a href="#home">首頁</a>
+            <a href="#products">電玩商品</a>
+            <a href="#about">關於我們</a>
+        </nav>
+
+        <!-- 商品區 -->
+        <h2 class="section-title" id="products">
+            🎮 熱門電玩商品 🎮
+        </h2>
+
+        <div class="products">
+
+            <!-- PS5 -->
+            <div class="product">
+                <img src="images/ps5.jpg" alt="PS5">
+                <h2>PlayStation 5</h2>
+                <p>次世代遊戲主機，享受極致遊戲體驗</p>
+                <a href="#about" class="btn">了解更多</a>
+            </div>
+
+            <!-- iPhone 15 -->
+            <div class="product">
+                <img src="images/iphone15.jpg" alt="iPhone 15">
+                <h2>iPhone 15</h2>
+                <p>強大效能，隨時享受手機遊戲</p>
+                <a href="#about" class="btn">了解更多</a>
+            </div>
+
+            <!-- Switch -->
+            <div class="product">
+                <img src="images/switch.jpg" alt="Switch">
+                <h2>Nintendo Switch</h2>
+                <p>隨時隨地，開啟你的遊戲冒險</p>
+                <a href="#about" class="btn">了解更多</a>
+            </div>
+
+            <!-- 微星筆電 -->
+            <div class="product">
+                <img src="images/微星.jpg" alt="微星筆電">
+                <h2>MSI 微星電競筆電</h2>
+                <p>高效能電競設備，享受流暢遊戲</p>
+                <a href="#about" class="btn">了解更多</a>
+            </div>
+
+            <!-- Xbox -->
+            <div class="product">
+                <img src="images/xbox.jpg" alt="Xbox">
+                <h2>Xbox</h2>
+                <p>探索精彩遊戲，挑戰無限可能</p>
+                <a href="#about" class="btn">了解更多</a>
+            </div>
+
+            <!-- 小米摺疊機 -->
+            <div class="product">
+                <img src="images/小米摺疊機.jpg" alt="小米摺疊機">
+                <h2>小米摺疊手機</h2>
+                <p>大螢幕娛樂，開啟全新遊戲視野</p>
+                <a href="#about" class="btn">了解更多</a>
+            </div>
+
+        </div>
+
+        <!-- 關於我們 -->
+        <footer id="about">
+            <h3>🎮 GAME ZONE 🎮</h3>
+            <p>你的專屬電玩遊戲世界</p>
+            <p>© 2026 GAME ZONE. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

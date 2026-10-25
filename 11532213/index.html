@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>我的旅遊相簿</title>
+    <meta charset="utf-8" />
+    <style>
+        /* 溫馨淡黃色底旅遊簡約風背景 */
+        body {
+            background-color: #fcf8ec;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            margin: 0;
+            padding: 30px 0;
+            color: #5a524c;
+        }
+
+        /* 主標題樣式 - 暖色調與優雅間距 */
+        .header-title {
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #8c6d46;
+            padding: 25px 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* 相片卡片 - 清新白底搭配暖色系邊框與柔和陰影 */
+        .photo-card {
+            background-color: #ffffff;
+            border: 1px solid #eadecb;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(140, 109, 70, 0.06);
+            padding: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(140, 109, 70, 0.12);
+        }
+
+        .photo-card img {
+            width: 100%;
+            max-width: 360px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .photo-card p {
+            margin: 14px 0 4px 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #6b5b4e;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* 頂部與底部簡約分隔線 */
+        .accent-line {
+            height: 2px;
+            background-color: #eadecb;
+            width: 100%;
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 13px;
+            color: #9c8a79;
+            padding: 20px 0;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 自動插入的返回首頁按鈕 -->
+    <a href="../index.html" class="auto-back-to-home">🏠 返回相簿觀摩首頁</a>
+    <style>
+        .auto-back-to-home {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff !important;
+            border: 1px solid #eee2c5 !important;
+            border-radius: 30px !important;
+            color: #5d5238 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-family: sans-serif !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            transition: all 0.2s ease !important;
+            position: relative;
+            z-index: 99999;
+        }
+        .auto-back-to-home:hover {
+            background-color: #fff9e6 !important;
+            border-color: #d4bc85 !important;
+            color: #b38628 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+
+    <!-- 主容器：保留原本 1024px 表格架構 -->
+    <table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
+        <!-- 頁首區塊 -->
+        <tr>
+            <td align="center" bgcolor="#fffdfa" style="border-radius: 10px 10px 0 0; overflow: hidden; border-top: 1px solid #eadecb; border-left: 1px solid #eadecb; border-right: 1px solid #eadecb;">
+                <div class="header-title">我的旅遊相簿</div>
+                <div class="accent-line"></div>
+            </td>
+        </tr>
+        <!-- 相簿內容區塊 -->
+        <tr>
+            <td bgcolor="#fcf8ec" style="padding: 35px 25px; border-left: 1px solid #eadecb; border-right: 1px solid #eadecb;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td width="180" valign="top">
+                            <!-- 側邊區域：保留原本結構 -->
+                        </td>
+                        <td>
+                            <table width="100%" cellpadding="12" cellspacing="0" border="0">
+                                <!-- 第一排照片 -->
+                                <tr>
+                                    <td align="center" width="48%" valign="top">
+                                        <div class="photo-card">
+                                            <img src="images/大山水壩.jpg" alt="大山水壩">
+                                            <p>大山水壩</p>
+                                        </div>
+                                    </td>
+                                    <td width="4%"></td>
+                                    <td align="center" width="48%" valign="top">
+                                        <div class="photo-card">
+                                            <img src="images/JB運動館.jpg" alt="JB運動館">
+                                            <p>JB運動館</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="3" height="15"></td></tr>
+                                <!-- 第二排照片 -->
+                                <tr>
+                                    <td align="center" width="48%" valign="top">
+                                        <div class="photo-card">
+                                            <img src="images/淡路島二次元之森~火影忍者樂園忍里.jpg" alt="淡路島">
+                                            <p>淡路島</p>
+                                        </div>
+                                    </td>
+                                    <td width="4%"></td>
+                                    <td align="center" width="48%" valign="top">
+                                        <div class="photo-card">
+                                            <img src="images/秋葉原.jpg" alt="秋葉原">
+                                            <p>秋葉原</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="3" height="15"></td></tr>
+                                <!-- 第三排照片 -->
+                                <tr>
+                                    <td align="center" width="48%" valign="top">
+                                        <div class="photo-card">
+                                            <img src="images/羅馬競技場.jpg" alt="羅馬競技場">
+                                            <p>羅馬競技場</p>
+                                        </div>
+                                    </td>
+                                    <td width="4%"></td>
+                                    <td align="center" width="48%" valign="top">
+                                        <div class="photo-card">
+                                            <img src="images/威尼斯.jpg" alt="威尼斯">
+                                            <p>威尼斯</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- 頁尾區塊 -->
+        <tr>
+            <td bgcolor="#fffdfa" style="border-radius: 0 0 10px 10px; overflow: hidden; border-bottom: 1px solid #eadecb; border-left: 1px solid #eadecb; border-right: 1px solid #eadecb;">
+                <div class="accent-line"></div>
+                <div class="footer-text">© My Travel Photo Album. All rights reserved.</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

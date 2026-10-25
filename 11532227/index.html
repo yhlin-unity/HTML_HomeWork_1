@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>旅遊相簿</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #d8bda4;
+        }
+
+        /* 整張筆記本背景 */
+        .album {
+            width: 1024px;
+            height: 1536px;
+            margin: 0 auto;
+            background-image: url("images/index.png");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 1024px 1536px;
+            position: relative;
+        }
+
+        /* 照片展示區 */
+        .photo-area {
+            position: absolute;
+            top: 380px;
+            left: 260px;
+            width: 640px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 35px;
+            row-gap: 55px;
+        }
+
+        /* 每張照片 */
+        .photo {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .photo img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border: 6px solid #fffaf0;
+            box-shadow: 3px 5px 10px rgba(70, 40, 20, 0.3);
+        }
+
+        /* 照片下方文字 */
+        .photo p {
+            color: #69452e;
+            font-size: 18px;
+            margin-top: 15px;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 自動插入的返回首頁按鈕 -->
+    <a href="../index.html" class="auto-back-to-home">🏠 返回相簿觀摩首頁</a>
+    <style>
+        .auto-back-to-home {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff !important;
+            border: 1px solid #eee2c5 !important;
+            border-radius: 30px !important;
+            color: #5d5238 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-family: sans-serif !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            transition: all 0.2s ease !important;
+            position: relative;
+            z-index: 99999;
+        }
+        .auto-back-to-home:hover {
+            background-color: #fff9e6 !important;
+            border-color: #d4bc85 !important;
+            color: #b38628 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+
+
+    <div class="album">
+
+        <div class="photo-area">
+
+            <div class="photo">
+                <img src="images/1.JPG" alt="樂樂笑爛">
+                <p>樂樂笑爛</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/2.JPG" alt="哈哈">
+                <p>哈哈</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/3.JPG" alt="笑死">
+                <p>笑死</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/4.JPG" alt="他正在看你">
+                <p>他正在看你</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/5.JPG" alt="舌頭">
+                <p>舌頭</p>
+            </div>
+
+            <div class="photo">
+                <img src="images/6.JPG" alt="睡覺">
+                <p>睡覺</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

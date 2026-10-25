@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>郭子寧相簿</title><style>*{box-sizing:border-box}body{margin:0;font-family:Arial,"Microsoft JhengHei",sans-serif;color:#29465a;background:#eaf4f8}.hero{min-height:270px;background:linear-gradient(#0e477544,#0e477533),url("./images/photobg.jpg") center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;text-shadow:0 2px 8px #1238}.hero h1{font-size:clamp(34px,5vw,56px);margin:0;letter-spacing:.12em;font-weight:800;text-shadow:0 3px 12px #123a,0 0 24px #1236}.hero p{font-size:18px;letter-spacing:.08em;background:#173d5033;display:inline-block;padding:8px 18px;border:1px solid #ffffff66;border-radius:999px;backdrop-filter:blur(5px)}.wrap{width:min(1200px,94%);margin:-25px auto 30px;position:relative;background:#ffffffed;border-radius:16px;padding:24px;box-shadow:0 8px 30px #23445522}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.filters button{border:1px solid #c8dce8;background:#f6fbff;padding:9px 18px;border-radius:24px;cursor:pointer;color:#31566d}.filters button.active{background:#1679bd;color:white}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{border-radius:10px;overflow:hidden;background:white;box-shadow:0 3px 12px #24445516;cursor:pointer}.card img{width:100%;height:190px;object-fit:cover;display:block}.card h2{font-size:16px;margin:12px 12px 5px}.card p{font-size:13px;color:#7890a0;margin:0 12px 14px}.search{margin-left:auto;max-width:240px;border:1px solid #c8dce8;border-radius:22px;padding:9px 14px;font-size:14px}footer{text-align:center;padding:0 0 24px;color:#6b8798;font-size:13px}.lightbox{display:none;position:fixed;inset:0;background:#071b2ddd;z-index:5;align-items:center;justify-content:center;padding:20px}.lightbox.open{display:flex}.lightbox img{max-width:min(100%,1000px);max-height:82vh;border-radius:10px}.close{position:absolute;right:24px;top:18px;color:white;background:none;border:0;font-size:34px;cursor:pointer}@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card img{height:170px}}@media(max-width:480px){.wrap{padding:14px}.grid{grid-template-columns:1fr}.card img{height:220px}.search{margin-left:0;max-width:100%;width:100%}.hero{min-height:220px}}</style></head><body>
+    <!-- 自動插入的返回首頁按鈕 -->
+    <a href="../index.html" class="auto-back-to-home">🏠 返回相簿觀摩首頁</a>
+    <style>
+        .auto-back-to-home {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff !important;
+            border: 1px solid #eee2c5 !important;
+            border-radius: 30px !important;
+            color: #5d5238 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-family: sans-serif !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            transition: all 0.2s ease !important;
+            position: relative;
+            z-index: 99999;
+        }
+        .auto-back-to-home:hover {
+            background-color: #fff9e6 !important;
+            border-color: #d4bc85 !important;
+            color: #b38628 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+<header class="hero"><div><h1>郭子寧相簿</h1><p>收藏每一段自然風景與美好回憶</p></div></header><main class="wrap"><div class="filters"><button class="active" data-filter="全部">全部</button><button data-filter="山景">山景</button><button data-filter="海邊">海邊</button><button data-filter="森林">森林</button><button data-filter="花海">花海</button><input id="search" class="search" placeholder="搜尋相片…"></div><section class="grid" id="grid"></section></main><footer>郭子寧相簿 · 收藏自然風景與美好回憶</footer><div class="lightbox" id="lightbox"><button class="close" id="close">×</button><img id="large" alt="相簿照片"></div><script>const photos=[['合歡山日出','山景','2024-05-12'],['花蓮七星潭','海邊','2024-04-28'],['日月潭湖景','山景','2024-04-18'],['杉林溪森林步道','森林','2024-04-10'],['台北城市夕景','山景','2024-03-10'],['花蓮六十石山','花海','2024-01-20'],['墾丁海灣','海邊','2024-02-05'],['春日櫻花','花海','2024-03-28']];const grid=document.querySelector('#grid');photos.forEach((p,i)=>{const el=document.createElement('article');el.className='card';el.dataset.category=p[1];el.innerHTML=`<img src="./images/${i+1}.jpg" alt="${p[0]}" ><h2>${p[0]}</h2><p>${p[2]} · ${p[1]}</p>`;el.querySelector('img').onerror=()=>{const im=el.querySelector('img');if(!im.dataset.fallback){im.dataset.fallback='1';im.src='./images/'+(i+1)+'.JPG'}};el.querySelector('img').onclick=()=>{document.querySelector('#large').src=el.querySelector('img').src;document.querySelector('#lightbox').classList.add('open')};grid.append(el)});let active='全部';function filter(){const q=document.querySelector('#search').value.trim().toLowerCase();document.querySelectorAll('.card').forEach((c,i)=>c.hidden=!((active==='全部'||c.dataset.category===active)&&photos[i][0].toLowerCase().includes(q)))}document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;filter()});document.querySelector('#search').oninput=filter;document.querySelector('#close').onclick=()=>document.querySelector('#lightbox').classList.remove('open');document.querySelector('#lightbox').onclick=e=>{if(e.target.id==='lightbox')e.currentTarget.classList.remove('open')};</script></body></html>

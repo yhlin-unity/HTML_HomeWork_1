@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>旅遊相簿</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px 0;
+            background-color: #e8eee3;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        /* 相簿背景 */
+        .album {
+            position: relative;
+            width: 100%;
+            max-width: 512px;
+            aspect-ratio: 1024 / 1536;
+            margin: 0 auto;
+            background-image: url("images/相簿.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        /* 照片尺寸與位置 */
+        .photo {
+            position: absolute;
+            width: 27.2%;
+            height: 14.2%;
+            object-fit: cover;
+        }
+
+        /* 第一排 */
+        .photo1 { left: 18.4%; top: 22.7%; }
+        .photo2 { left: 54.7%; top: 22.7%; }
+
+        /* 第二排 */
+        .photo3 { left: 18.4%; top: 45%; }
+        .photo4 { left: 54.7%; top: 45%; }
+
+        /* 第三排 */
+        .photo5 { left: 18.4%; top: 67.6%; }
+        .photo6 { left: 54.7%; top: 67.6%; }
+
+        /* 景點名稱 */
+        .caption {
+            position: absolute;
+            width: 30%;
+            margin: 0;
+            text-align: center;
+            color: #40563c;
+            font-size: 11px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .caption1 { left: 17%; top: 39%; }
+        .caption2 { left: 53%; top: 39%; }
+
+        .caption3 { left: 17%; top: 61.3%; }
+        .caption4 { left: 53%; top: 61.3%; }
+
+        .caption5 { left: 17%; top: 83.7%; }
+        .caption6 { left: 53%; top: 83.7%; }
+
+        @media (max-width: 520px) {
+            .album {
+                width: 100%;
+            }
+
+            .caption {
+                font-size: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 自動插入的返回首頁按鈕 -->
+    <a href="../index.html" class="auto-back-to-home">🏠 返回相簿觀摩首頁</a>
+    <style>
+        .auto-back-to-home {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff !important;
+            border: 1px solid #eee2c5 !important;
+            border-radius: 30px !important;
+            color: #5d5238 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-family: sans-serif !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            transition: all 0.2s ease !important;
+            position: relative;
+            z-index: 99999;
+        }
+        .auto-back-to-home:hover {
+            background-color: #fff9e6 !important;
+            border-color: #d4bc85 !important;
+            color: #b38628 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+
+
+    <div class="album">
+
+        <img class="photo photo1"
+             src="images/赤崁樓.JPG" alt="赤崁樓">
+        <p class="caption caption1">赤崁樓</p>
+
+        <img class="photo photo2"
+             src="images/安平古堡.JFIF" alt="安平古堡">
+        <p class="caption caption2">安平古堡</p>
+
+        <img class="photo photo3"
+             src="images/億載金城.JFIF" alt="億載金城">
+        <p class="caption caption3">億載金城</p>
+
+        <img class="photo photo4"
+             src="images/日月潭.JFIF" alt="日月潭">
+        <p class="caption caption4">日月潭</p>
+
+        <img class="photo photo5"
+             src="images/阿里山.JFIF" alt="阿里山">
+        <p class="caption caption5">阿里山</p>
+
+        <img class="photo photo6"
+             src="images/太魯閣.JFIF" alt="太魯閣峽谷">
+        <p class="caption caption6">太魯閣峽谷
+        </p>
+
+    </div>
+
+</body>
+</html>

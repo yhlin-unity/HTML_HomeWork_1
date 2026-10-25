@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>相簿</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        .main-container {
+            width: 1018px;
+            margin: 0 auto;
+            background-color: #000000;
+        }
+
+        .banner-img {
+            width: 100%;
+            display: block;
+        }
+
+        .content-area {
+            background-image: url('images/IMG_1142.GIF');
+            background-repeat: repeat-y;
+            
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        /* 相片佈局 (2列) */
+        .photo-grid {
+            width: 85%;
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 0px;
+        }
+
+        /* 單張相片外框卡片 */
+        .photo-card {
+            background-image: url('images/oiiai.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 123px 10px 69px 16px;
+        }
+
+        .photo-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .photo-card p {
+            margin-top: 61px;
+            font-size: 17px;
+            color: #333;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+</head>
+<body>
+    <!-- 自動插入的返回首頁按鈕 -->
+    <a href="../index.html" class="auto-back-to-home">🏠 返回相簿觀摩首頁</a>
+    <style>
+        .auto-back-to-home {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff !important;
+            border: 1px solid #eee2c5 !important;
+            border-radius: 30px !important;
+            color: #5d5238 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-family: sans-serif !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            transition: all 0.2s ease !important;
+            position: relative;
+            z-index: 99999;
+        }
+        .auto-back-to-home:hover {
+            background-color: #fff9e6 !important;
+            border-color: #d4bc85 !important;
+            color: #b38628 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+
+
+    <div class="main-container">
+        <!-- 頁首 -->
+        <img src="images/IMG_1140.GIF" alt="頁首圖片" class="banner-img">
+
+        <!-- 內容區 -->
+        <div style="padding-left: 118px; height: 2694px;" class="content-area">
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <img style="height: 160px; padding: 0px; margin: 0px;" src="images/01.jpg" alt="李箱">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Yi Sang</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/02.jpg" alt="浮士德">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Faust</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/03.jpg" alt="唐吉軻德">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Don Quixote</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/04.jpg" alt="良秀">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Ryōshū</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/05.jpg" alt="莫爾索">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Meursault</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/06.jpg" alt="鴻路">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Hong Lu</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/07.jpg" alt="希斯克里夫">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Heathcliff</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/08.jpg" alt="以實瑪利">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Ishmael</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/09.jpg" alt="羅佳">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Rodion</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/11.jpg" alt="辛克萊">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Sinclair</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/12.jpg" alt="奧提斯">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Outis</p>
+                </div>
+                <div class="photo-card">
+                    <img style="height: 160px;" src="images/13.jpg" alt="格里高爾">
+                    <p style="font-family: 'Press Start 2P', sans-serif;">Gregor</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 頁尾 -->
+        <img style="padding: 0px; padding-left: 0px; padding-right: 0px; padding-bottom: 0px; padding-top: 0px;" src="images/IMG_1143.GIF" alt="頁尾圖片" class="banner-img">
+    </div>
+
+</body>
+</html>

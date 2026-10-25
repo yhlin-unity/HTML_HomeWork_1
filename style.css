@@ -1,0 +1,105 @@
+body {
+    /* 設定淡黃色背景與主題背景圖 */
+    background-color: #fefbf0; 
+    /* 如果有背景圖，請將下一行的 background.jpg 改為您的圖片檔名 */
+  /* 1. 設定預備底色（萬一圖片沒載入時顯示） */
+    background-color: #fefbf0; 
+    
+    /* 2. 載入你的 SVG 檔案 */
+    background-image: url('background.svg');
+    
+    /* 3. 根據你的 SVG 類型選擇縮放方式（二選一） */
+    
+    /* 如果你的 SVG 是一整張大圖、大漸層或角落有插圖： */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* 如果你的 SVG 是一個小圖案，想要讓它「像壁紙一樣不斷重複填滿」： */
+    /* background-size: 100px 100px; */ /* 控制單個重複圖案的大小 */
+    /* background-repeat: repeat; */
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    color: #4a4a4a;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* 磨砂玻璃質感：背景半透明，若有背景圖會隱約透出 */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #f3ebd3;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #8a6d3b;
+    margin: 0 0 10px 0;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    color: #9b8a6a;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* 連結卡片排版 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.folder-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border: 1px solid #eee2c5;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #5d5238;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* 模擬資料夾黃色小圖示 */
+.folder-link::before {
+    content: "📁";
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+/* 滑鼠懸停特效 */
+.folder-link:hover {
+    background-color: #fff9e6;
+    border-color: #d4bc85;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 188, 133, 0.3);
+    color: #b38628;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #a3977e;
+}
